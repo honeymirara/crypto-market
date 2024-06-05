@@ -3,7 +3,7 @@
     "id": "1",
     "symbol": "BTC",
     "name": "Bitcoin",
-    "logo": "../../../public/assets/btc.png",
+    "logo": "/assets/btc.png",
     "priceUSD": 45000.00,
     "marketCapUSD": 850000000.00,
     "change24h": 5.25
@@ -12,7 +12,7 @@
     "id": "2",
     "symbol": "ETH",
     "name": "Ethereum",
-    "logo": "../../../public/assets/eth.png",
+    "logo": "/assets/eth.png",
     "priceUSD": 3000.00,
     "marketCapUSD": 350000000.00,
     "change24h": 3.75

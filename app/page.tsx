@@ -14,15 +14,9 @@ const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(10);
 
-
   useEffect(() => {
     setCoins(coinsData);
   }, []);
-
-  
-  const handleAddCoin = (coin: Coin) => {
-    setCoins((prevCoins) => [...prevCoins, coin]);
-  };
 
   const formatPrice = (value: number) => {
     const suffixes = ['b', 'm', 'k'];
@@ -75,13 +69,14 @@ const Home: React.FC = () => {
     <div className={style.container}>
       <h1 className={style.title}>Today's Cryptocurrency Prices by Crypto Market</h1>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <CoinTable coins={currentCoins} formatPrice={formatPrice} handleAddCoin={handleAddCoin} handleSort={handleSort} />
+      <CoinTable coins={currentCoins} formatPrice={formatPrice} handleSort={handleSort} />
       <Pagination totalCoins={filteredCoins.length} coinsPerPage={coinsPerPage} paginate={paginate} currentPage={currentPage} />
     </div>
   );
 };
 
-export default Home
+export default Home;
+
 
 
 
