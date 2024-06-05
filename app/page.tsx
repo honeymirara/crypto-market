@@ -5,7 +5,7 @@ import CoinTable from './components/CoinTable/CoinTable';
 import Pagination from './components/Pagination/Pagination';
 import SearchBar from './components/SearchBar/SearchBar';
 import style from './Home.module.scss';
-import coinsData from '../data/coin.json'
+import coinsData from '../data/coin.json';
 
 const Home: React.FC = () => {
   const [coins, setCoins] = useState<Coin[]>([]);
@@ -39,11 +39,17 @@ const Home: React.FC = () => {
   const sortedCoins = React.useMemo(() => {
     if (sortConfig !== null) {
       return [...filteredCoins].sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === 'ascending' ? -1 : 1;
-        }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === 'ascending' ? 1 : -1;
+        const aValue = a[sortConfig.key];
+        const bValue = b[sortConfig.key];
+
+        // Добавление проверки на наличие значений перед их сравнением
+        if (aValue !== undefined && bValue !== undefined) {
+          if (aValue < bValue) {
+            return sortConfig.direction === 'ascending' ? -1 : 1;
+          }
+          if (aValue > bValue) {
+            return sortConfig.direction === 'ascending' ? 1 : -1;
+          }
         }
         return 0;
       });
@@ -76,7 +82,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-
 
 

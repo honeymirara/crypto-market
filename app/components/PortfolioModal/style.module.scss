@@ -1,0 +1,72 @@
+.modalBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modalContent {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+
+        .closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .portfolioList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .portfolioItem {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .portfolioItem:last-child {
+            border-bottom: none;
+        }
+
+        .removeButton {
+            background-color: #ff4d4f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .removeButton:hover {
+            background-color: #ff7875;
+        }
+
+        .portfolioSummary {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+}

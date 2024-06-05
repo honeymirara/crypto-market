@@ -8,4 +8,5 @@ export interface Coin {
     priceUSD: number;
     marketCapUSD: number;
     change24h: number;
+    quantity?: number;
   }
